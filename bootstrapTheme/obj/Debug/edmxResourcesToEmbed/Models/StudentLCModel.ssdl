@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="LCModelStoreContainer">
+    <EntitySet Name="StudentLCData" EntityType="LCModel.Store.StudentLCData" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="StudentLCData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AdmissionNo" Type="int" />
+    <Property Name="FullName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Nationality" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="MotherTongue" Type="varchar" MaxLength="50" />
+    <Property Name="Religion" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Caste" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="SubCaste" Type="varchar" MaxLength="50" />
+    <Property Name="BirthPlace" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DOBInDigits" Type="varchar" MaxLength="50" />
+    <Property Name="DOBInWords" Type="varchar" MaxLength="150" />
+    <Property Name="PrevSchlName" Type="varchar" MaxLength="150" />
+    <Property Name="AdmittedInClass" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdmissionDate" Type="varchar" MaxLength="50" />
+    <Property Name="Progress" Type="varchar" MaxLength="150" />
+    <Property Name="ConductBehaviour" Type="varchar" MaxLength="150" />
+    <Property Name="DateOfSchlLeaving" Type="varchar" MaxLength="50" />
+    <Property Name="ClassFromLeft" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReasonForLeaving" Type="varchar" MaxLength="150" />
+    <Property Name="CertificateRcvdDate" Type="varchar" MaxLength="50" />
+    <Property Name="ReceivedByName" Type="varchar" MaxLength="50" />
+  </EntityType>
+</Schema>

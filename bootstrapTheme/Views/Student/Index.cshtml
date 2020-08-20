@@ -1,0 +1,166 @@
+﻿@model IEnumerable<bootstrapTheme.Models.StudentLCData>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1 class="mt-4">List of Student</h1>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AdmissionNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotherTongue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Religion)
+            </th>
+            @*     <th>
+            @Html.DisplayNameFor(model => model.Caste)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SubCaste)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthPlace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOBInDigits)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOBInWords)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevSchlName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmittedInClass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmissionDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Progress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConductBehaviour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfSchlLeaving)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassFromLeft)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReasonForLeaving)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CertificateRcvdDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceivedByName)
+        </th>*@
+            <th>Action</th>
+    </thead>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdmissionNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotherTongue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Religion)
+            </td>
+            @*       <td>
+            @Html.DisplayFor(modelItem => item.Caste)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubCaste)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthPlace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOBInDigits)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOBInWords)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevSchlName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmittedInClass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmissionDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Progress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConductBehaviour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfSchlLeaving)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassFromLeft)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReasonForLeaving)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CertificateRcvdDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceivedByName)
+        </td>*@
+            <td>
+                @*                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+
+                <a href="@Url.Action("Edit", "Student", new { id = item.Id })">
+                    <i class="far fa-edit" style="color: blue" title="Edit"></i>
+                </a>&nbsp;
+
+                <a href="@Url.Action("Details", "Student", new { id = item.Id })">
+                    <i class="fas fa-info-circle" style="color: green" title="Details"></i>
+                </a>&nbsp;
+
+                <a href="@Url.Action("Delete", "Student", new { id = item.Id })">
+                    <i class="fas fa-trash-alt" style="color: red" title="Delete"></i>
+                </a>&nbsp;
+
+                <a href="@Url.Action("Print", "Student", new { id = item.Id })" target="_blank">
+                    <i class="far fa-file-pdf" style="color: darkblue" title="Print PDF"></i>
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

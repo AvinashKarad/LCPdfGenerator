@@ -1,0 +1,224 @@
+﻿@model bootstrapTheme.Models.StudentLCData
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Add Student Data</legend>
+        <div class="row">
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.AdmissionNo)
+                </div>
+                <div class="editor-field ">
+                    @Html.EditorFor(model => model.AdmissionNo)
+                    @Html.ValidationMessageFor(model => model.AdmissionNo)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.FullName)
+                </div>
+                <div class="editor-field ">
+                    @Html.EditorFor(model => model.FullName)
+                    @Html.ValidationMessageFor(model => model.FullName)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Nationality)
+                </div>
+                <div class="editor-field ">
+                    @Html.EditorFor(model => model.Nationality)
+                    @Html.ValidationMessageFor(model => model.Nationality)
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.MotherTongue)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.MotherTongue)
+                    @Html.ValidationMessageFor(model => model.MotherTongue)
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-top: 20px">
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Religion)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Religion)
+                    @Html.ValidationMessageFor(model => model.Religion)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Caste)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Caste)
+                    @Html.ValidationMessageFor(model => model.Caste)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.SubCaste)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.SubCaste)
+                    @Html.ValidationMessageFor(model => model.SubCaste)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.BirthPlace)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.BirthPlace)
+                    @Html.ValidationMessageFor(model => model.BirthPlace)
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 20px">
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DOBInDigits)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.DOBInDigits)
+                    @Html.ValidationMessageFor(model => model.DOBInDigits)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DOBInWords)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.DOBInWords)
+                    @Html.ValidationMessageFor(model => model.DOBInWords)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.PrevSchlName)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.PrevSchlName)
+                    @Html.ValidationMessageFor(model => model.PrevSchlName)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.AdmittedInClass)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.AdmittedInClass)
+                    @Html.ValidationMessageFor(model => model.AdmittedInClass)
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 20px">
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.AdmissionDate)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.AdmissionDate)
+                    @Html.ValidationMessageFor(model => model.AdmissionDate)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Progress)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Progress)
+                    @Html.ValidationMessageFor(model => model.Progress)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ConductBehaviour)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ConductBehaviour)
+                    @Html.ValidationMessageFor(model => model.ConductBehaviour)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DateOfSchlLeaving)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.DateOfSchlLeaving)
+                    @Html.ValidationMessageFor(model => model.DateOfSchlLeaving)
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 20px">
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ClassFromLeft)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ClassFromLeft)
+                    @Html.ValidationMessageFor(model => model.ClassFromLeft)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ReasonForLeaving)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ReasonForLeaving)
+                    @Html.ValidationMessageFor(model => model.ReasonForLeaving)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CertificateRcvdDate)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CertificateRcvdDate)
+                    @Html.ValidationMessageFor(model => model.CertificateRcvdDate)
+                </div>
+            </div>
+            <div class="col">
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ReceivedByName)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ReceivedByName)
+                    @Html.ValidationMessageFor(model => model.ReceivedByName)
+                </div>
+            </div>
+        </div>
+        <p>
+            <br />
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

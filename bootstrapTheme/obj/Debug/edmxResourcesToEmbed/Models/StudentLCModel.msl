@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LCModelStoreContainer" CdmEntityContainer="LeavingCertificatePdfEntities">
+    <EntitySetMapping Name="StudentLCDatas">
+      <EntityTypeMapping TypeName="LCModel.StudentLCData">
+        <MappingFragment StoreEntitySet="StudentLCData">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AdmissionNo" ColumnName="AdmissionNo" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="MotherTongue" ColumnName="MotherTongue" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Caste" ColumnName="Caste" />
+          <ScalarProperty Name="SubCaste" ColumnName="SubCaste" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="DOBInDigits" ColumnName="DOBInDigits" />
+          <ScalarProperty Name="DOBInWords" ColumnName="DOBInWords" />
+          <ScalarProperty Name="PrevSchlName" ColumnName="PrevSchlName" />
+          <ScalarProperty Name="AdmittedInClass" ColumnName="AdmittedInClass" />
+          <ScalarProperty Name="AdmissionDate" ColumnName="AdmissionDate" />
+          <ScalarProperty Name="Progress" ColumnName="Progress" />
+          <ScalarProperty Name="ConductBehaviour" ColumnName="ConductBehaviour" />
+          <ScalarProperty Name="DateOfSchlLeaving" ColumnName="DateOfSchlLeaving" />
+          <ScalarProperty Name="ClassFromLeft" ColumnName="ClassFromLeft" />
+          <ScalarProperty Name="ReasonForLeaving" ColumnName="ReasonForLeaving" />
+          <ScalarProperty Name="CertificateRcvdDate" ColumnName="CertificateRcvdDate" />
+          <ScalarProperty Name="ReceivedByName" ColumnName="ReceivedByName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

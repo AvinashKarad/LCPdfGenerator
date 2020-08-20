@@ -1,0 +1,276 @@
+﻿@model bootstrapTheme.Models.StudentLCData
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Student Full Information</legend>
+    <table class="table table-striped">
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.AdmissionNo)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.AdmissionNo)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.FullName)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.FullName)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Nationality)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Nationality)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.MotherTongue)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.MotherTongue)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Religion)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Religion)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Caste)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Caste)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.SubCaste)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.SubCaste)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.BirthPlace)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.BirthPlace)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.DOBInDigits)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.DOBInDigits)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.DOBInWords)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.DOBInWords)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.PrevSchlName)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.PrevSchlName)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.AdmittedInClass)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.AdmittedInClass)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.AdmissionDate)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.AdmissionDate)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Progress)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Progress)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.ConductBehaviour)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.ConductBehaviour)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.DateOfSchlLeaving)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.DateOfSchlLeaving)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.ClassFromLeft)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.ClassFromLeft)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.ReasonForLeaving)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.ReasonForLeaving)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.CertificateRcvdDate)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.CertificateRcvdDate)
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.ReceivedByName)
+                </div>
+            </th>
+            <td>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.ReceivedByName)
+                </div>
+            </td>
+        </tr>
+
+    </table>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

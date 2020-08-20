@@ -1,0 +1,323 @@
+﻿@model bootstrapTheme.Models.StudentLCData
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/dist/css/printbyid.css" rel="stylesheet" />
+    <link href="~/Content/dist/css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+    <title>PrintById</title>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <td>
+                <img src="~/Images/MSBSHSE_logo.png" width="100" />
+            </td>
+            <td>
+                <h1>MAHARASHTRA PRIMARY SCHOOL</h1>
+            </td>
+        </tr>
+        @*        <tr>
+            <td></td>
+            <td>
+                <h2>SCHOOL LEAVING CERTIFICATE</h2>
+            </td>
+        </tr>*@
+    </table>
+
+    <hr style="border-top: 2px solid black;" />
+    <h2 style="text-align: center">SCHOOL LEAVING CERTIFICATE</h2>
+    <hr style="border-top: 2px solid black;" />
+
+
+    <table class="table">
+        <tr>
+            <td><strong>@Html.DisplayNameFor(model => model.AdmissionNo) :</strong> @Html.DisplayFor(model => model.AdmissionNo)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td style="float: right;"><strong>Date :</strong> @DateTime.Today.ToShortDateString()</td>
+        </tr>
+
+    </table>
+
+    <table class="table LCtable">
+        <tr>
+            <td colspan="2">
+                <strong>1. Name of Pupil : </strong>@Html.DisplayFor(model => model.FullName)
+            </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong>2. @Html.DisplayNameFor(model => model.Nationality) :</strong> @Html.DisplayFor(model => model.Nationality)
+            </td>
+            <td>
+                <strong>3. @Html.DisplayNameFor(model => model.Religion) :</strong> @Html.DisplayFor(model => model.Religion)
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <strong>4. Mother Tongue :</strong> @Html.DisplayFor(model => model.MotherTongue)
+            </td>
+            <td>
+                <strong>5. Birth Place :</strong> @Html.DisplayFor(model => model.BirthPlace)
+            </td>
+            <td>
+                <strong>6. @Html.DisplayNameFor(model => model.Caste) :</strong> @Html.DisplayFor(model => model.Caste)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <strong>7. Whether the candidate belongs to SC/ST/OBC or any other :</strong> @Html.DisplayFor(model => model.SubCaste)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <strong>8. Date of birth according to Admission Register (in figures) :</strong> @Html.DisplayFor(model => model.DOBInDigits)<br />
+                <strong>(in words) :</strong> @Html.DisplayFor(model => model.DOBInWords)
+            </td>
+
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <strong>9. Name of the previous school :</strong> @Html.DisplayFor(model => model.PrevSchlName)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong>10. Admitted in Class :</strong> @Html.DisplayFor(model => model.AdmittedInClass)
+            </td>
+            <td colspan="2">
+                <strong>11. Admitted on date :</strong> @Html.DisplayFor(model => model.AdmissionDate)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong>12. General conduct :</strong> @Html.DisplayFor(model => model.ConductBehaviour)
+            </td>
+            <td>
+                <strong>13. Progress of pupil :</strong> @Html.DisplayFor(model => model.Progress)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <strong>14. Date of school leaving :</strong> @Html.DisplayFor(model => model.DateOfSchlLeaving)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <strong>15. Class from leaving school :</strong>  @Html.DisplayFor(model => model.ClassFromLeft)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <strong>16. Reasons for leaving the school :</strong> @Html.DisplayFor(model => model.ReasonForLeaving)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <strong>17. Certificate issued date :</strong> @Html.DisplayFor(model => model.CertificateRcvdDate)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <strong>18. Certificate issued by :</strong> @Html.DisplayFor(model => model.ReceivedByName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center">
+                <strong>Signature<br />
+                    of Class Teacher</strong>
+            </td>
+            <td style="text-align: center">
+                <strong>Checked by<br />
+                    (State full name and designation)</strong>
+            </td>
+            <td style="text-align: center">
+                <strong>Principal's Sign<br />
+                    (Seal with full Address)</strong>
+            </td>
+        </tr>
+    </table>
+
+    <hr style="border-top: 1px solid black;" />
+
+    @*  <div class="display-label">
+        @Html.DisplayNameFor(model => model.AdmissionNo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdmissionNo)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.FullName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullName)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Nationality)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nationality)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.MotherTongue)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MotherTongue)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Religion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Religion)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Caste)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Caste)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.SubCaste)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SubCaste)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.BirthPlace)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BirthPlace)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.DOBInDigits)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DOBInDigits)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.DOBInWords)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DOBInWords)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.PrevSchlName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PrevSchlName)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.AdmittedInClass)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdmittedInClass)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.AdmissionDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdmissionDate)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Progress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Progress)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ConductBehaviour)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ConductBehaviour)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.DateOfSchlLeaving)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DateOfSchlLeaving)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ClassFromLeft)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ClassFromLeft)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ReasonForLeaving)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReasonForLeaving)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.CertificateRcvdDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CertificateRcvdDate)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ReceivedByName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReceivedByName)
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
+</body>
+</html>
