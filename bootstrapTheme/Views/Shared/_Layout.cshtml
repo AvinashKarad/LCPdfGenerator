@@ -30,10 +30,21 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#">Settings</a>
-                    <a class="dropdown-item" href="#">Activity Log</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="dropdown-item" href="#">Hello @User.Identity.Name</a>
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/user/logout/">Logout</a>
+                    }
+                    else
+                    {
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <a class="dropdown-item" href="#">Activity Log</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/user/login/">Login</a>
+                    }
                 </div>
             </li>
         </ul>
@@ -48,7 +59,7 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
-@*                        <span class="nav-link">
+                        @*                        <span class="nav-link">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             @Html.ActionLink("Dashboard", "Index", "Student")
                         </span>*@
@@ -107,7 +118,7 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
-                    Start Bootstrap
+                    @User.Identity.Name
                 </div>
             </nav>
         </div>
@@ -118,9 +129,15 @@
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>*@
+
+
+
                         <section class="content-wrapper main-content clear-fix">
                             @RenderBody()
                         </section>
+
+
+
 
                         @*<div class="card mb-4">
                             <div class="card-header">
@@ -221,6 +238,7 @@
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
 
 </body>
+@RenderSection("scripts", required: false)
 </html>
 
 

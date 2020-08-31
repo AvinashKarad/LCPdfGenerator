@@ -26,5 +26,6 @@ namespace bootstrapTheme.Models
         }
     
         public DbSet<StudentLCData> StudentLCDatas { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,6 +11,7 @@ using Rotativa.MVC;
 
 namespace bootstrapTheme.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
         private LeavingCertificatePdfEntities db = new LeavingCertificatePdfEntities();
@@ -80,7 +82,7 @@ namespace bootstrapTheme.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(studentlcdata).State = EntityState.Modified;
+                db.Entry(studentlcdata).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -120,8 +122,10 @@ namespace bootstrapTheme.Controllers
 
         public ActionResult Print(int id)
         {
-            var report = new ActionAsPdf("PrintById", new { id = id });
-            return report;
+
+                 var report = new ActionAsPdf("PrintById", new { id = id });
+                 return report;
+
         }
 
         public ActionResult PrintById(int? id = 0)

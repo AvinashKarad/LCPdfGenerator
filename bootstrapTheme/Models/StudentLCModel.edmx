@@ -4,9 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="LCModelStoreContainer">
           <EntitySet Name="StudentLCData" EntityType="LCModel.Store.StudentLCData" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="LCModel.Store.User" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="StudentLCData">
           <Key>
@@ -34,13 +35,24 @@
           <Property Name="CertificateRcvdDate" Type="varchar" MaxLength="50" />
           <Property Name="ReceivedByName" Type="varchar" MaxLength="50" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Confirmpassword" Type="varchar" MaxLength="50" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LCModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="LeavingCertificatePdfEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="StudentLCDatas" EntityType="LCModel.StudentLCData" />
+          <EntitySet Name="User" EntityType="LCModel.User" />
         </EntityContainer>
         <EntityType Name="StudentLCData">
           <Key>
@@ -67,6 +79,17 @@
           <Property Name="ReasonForLeaving" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
           <Property Name="CertificateRcvdDate" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="ReceivedByName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Confirmpassword" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -98,6 +121,18 @@
                 <ScalarProperty Name="ReasonForLeaving" ColumnName="ReasonForLeaving" />
                 <ScalarProperty Name="CertificateRcvdDate" ColumnName="CertificateRcvdDate" />
                 <ScalarProperty Name="ReceivedByName" ColumnName="ReceivedByName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="LCModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Confirmpassword" ColumnName="Confirmpassword" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -2,6 +2,7 @@
 <Schema Namespace="LCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="LCModelStoreContainer">
     <EntitySet Name="StudentLCData" EntityType="LCModel.Store.StudentLCData" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="LCModel.Store.User" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="StudentLCData">
     <Key>
@@ -28,5 +29,16 @@
     <Property Name="ReasonForLeaving" Type="varchar" MaxLength="150" />
     <Property Name="CertificateRcvdDate" Type="varchar" MaxLength="50" />
     <Property Name="ReceivedByName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Confirmpassword" Type="varchar" MaxLength="50" />
   </EntityType>
 </Schema>
